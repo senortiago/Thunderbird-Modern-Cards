@@ -1,0 +1,72 @@
+{
+  "extensionName": {
+    "message": "Foto Profilo Automatica",
+    "description": "Nome dell'estensione."
+  },
+  "extensionDescription": {
+    "message": "Migliora la tua casella di posta Thunderbird con immagini di profilo automatiche, aggiungendo loghi aziendali o avatar alle email e ai contatti supportando BIMI",
+    "description": "Descrizione dell'estensione."
+  },
+  "contactsIntegrationLabel": {
+    "message": "Aggiungi automaticamente una foto del profilo quando salvi un contatto",
+    "description": "Etichetta per la casella di controllo dell'integrazione dei contatti."
+  },
+  "inboxListLabel": {
+    "message": "Abilita immagini nella lista della posta in arrivo (Sperimentale)",
+    "description": "Etichetta per la casella di controllo della lista della posta in arrivo."
+  },
+  "inboxListDescription": {
+    "message": "Abilita questa opzione per mostrare le foto del profilo nella lista della posta in arrivo. (solo per Thunderbird 121+)",
+    "description": "Descrizione della funzionalità della lista della posta in arrivo."
+  },
+  "cacheSizeLabel": {
+    "message": "Dimensione:",
+    "description": "Etichetta per la visualizzazione della dimensione della cache."
+  },
+  "clearCacheButton": {
+    "message": "Svuota Cache",
+    "description": "Etichetta per il pulsante di svuotamento della cache."
+  },
+  "cacheCleared": {
+    "message": "Cache svuotata",
+    "description": "Messaggio visualizzato quando la cache è svuotata."
+  },
+  "profilePictureNotFound": {
+    "message": "Foto del profilo non trovata",
+    "description": "Messaggio visualizzato quando la foto del profilo non è trovata."
+  },
+  "errorDisplayingImage": {
+    "message": "Errore durante la visualizzazione dell'immagine (vedi console per dettagli)",
+    "description": "Messaggio di errore visualizzato quando c'è un errore durante la visualizzazione dell'immagine."
+  },
+  "testHeader": {
+    "message": "Verifica una foto del profilo",
+    "description": "Intestazione della sezione di test."
+  },
+  "emailInputPlaceholder": {
+    "message": "Email che vuoi testare",
+    "description": "Segnaposto per il campo di input dell'email."
+  },
+  "fetchButtonLabel": {
+    "message": "Mostra",
+    "description": "Etichetta per il pulsante di recupero."
+  },
+  "noIcons": {
+    "message": "Nessuna icona",
+    "description": "Conteggio visualizzato quando nessuna icona è memorizzata nella cache."
+  },
+  "oneIcon": {
+    "message": "1 icona",
+    "description": "Conteggio visualizzato quando 1 icona è memorizzata nella cache."
+  },
+  "multipleIcons": {
+    "message": "$NB$ icone",
+    "description": "Conteggio visualizzato quando più icone sono memorizzate nella cache.",
+    "placeholders": {
+      "NB": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  }
+}

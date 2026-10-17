@@ -1,0 +1,272 @@
+{
+  "extensionName": {
+    "message": "Auto Profile Picture",
+    "description": "Name of the extension."
+  },
+  "extensionDescription": {
+    "message": "Show a picture for every sender in Thunderbird. Choose your picture sources, control what each lookup reveals, and set per-sender rules.",
+    "description": "Description of the extension."
+  },
+  "appearanceHeader": {
+    "message": "Where pictures appear",
+    "description": "Header for the features section."
+  },
+  "contactsIntegrationLabel": {
+    "message": "Auto add profile picture when saving a contact",
+    "description": "Label for the contacts integration checkbox."
+  },
+  "inboxListLabel": {
+    "message": "Enable pictures in inbox list (Experimental)",
+    "description": "Label for the inbox list checkbox."
+  },
+  "inboxListDescription": {
+    "message": "Shows a picture next to each message in the list.",
+    "description": "Description of the inbox list feature."
+  },
+  "inboxListExperimentalNote": {
+    "message": "This feature reaches into parts of Thunderbird that can change between releases. If the message list misbehaves, turn it off and report the problem.",
+    "description": "Warning message for the inbox list feature."
+  },
+  "savedPicturesHeader": {
+    "message": "Saved pictures",
+    "description": "Header for the cache section."
+  },
+  "cacheSizeLabel": {
+    "message": "Size:",
+    "description": "Label for the cache size display."
+  },
+  "clearCacheButton": {
+    "message": "Clear Cache",
+    "description": "Label for the clear cache button."
+  },
+  "cacheCleared": {
+    "message": "Cache cleared",
+    "description": "Message displayed when the cache is cleared."
+  },
+  "profilePictureNotFound": {
+    "message": "Profile picture not found",
+    "description": "Message displayed when the profile picture is not found."
+  },
+  "errorDisplayingImage": {
+    "message": "Error displaying image (see console for details)",
+    "description": "Error message displayed when there's an error displaying the image."
+  },
+  "testHeader": {
+    "message": "Check a profile picture",
+    "description": "Header for the test section."
+  },
+  "emailInputPlaceholder": {
+    "message": "Email you want to test",
+    "description": "Placeholder for the email input field."
+  },
+  "fetchButtonLabel": {
+    "message": "Show",
+    "description": "Label for the fetch button."
+  },
+  "noIcons": {
+    "message": "No icons",
+    "description": "Count displayed when no icons are stored in cache."
+  },
+  "oneIcon": {
+    "message": "1 icon",
+    "description": "Count displayed when 1 icon is stored in cache."
+  },
+  "multipleIcons": {
+    "message": "$NB$ icons",
+    "description": "Count displayed when multiple icons are stored in cache.",
+    "placeholders": {
+      "NB": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "providersHeader": {
+    "message": "Picture sources",
+    "description": "Header for the picture sources section."
+  },
+  "providersDescription": {
+    "message": "Sources are tried from top to bottom, and the first picture found is used. Turning off sources you don't need makes lookups faster.",
+    "description": "Explanation of how the provider chain works."
+  },
+  "providerBimi": {
+    "message": "BIMI (sender's own domain)",
+    "description": "Name of the BIMI provider."
+  },
+  "providerGravatar": {
+    "message": "Gravatar",
+    "description": "Name of the Gravatar provider."
+  },
+  "providerLibravatar": {
+    "message": "Libravatar",
+    "description": "Name of the Libravatar provider."
+  },
+  "providerDuckDuckGo": {
+    "message": "DuckDuckGo",
+    "description": "Name of the DuckDuckGo provider."
+  },
+  "providerGoogle": {
+    "message": "Google",
+    "description": "Name of the Google provider."
+  },
+  "providerIconHorse": {
+    "message": "Icon Horse",
+    "description": "Name of the Icon Horse provider."
+  },
+  "providerSplitbee": {
+    "message": "Splitbee",
+    "description": "Name of the Splitbee provider."
+  },
+  "providerFaviconWebpage": {
+    "message": "Website icon (sender's own site)",
+    "description": "Name of the favicon scraping provider."
+  },
+  "providerBadgeThirdParty": {
+    "message": "third party",
+    "description": "Badge marking a provider that discloses the correspondent to an outside service."
+  },
+  "providerBadgeSlow": {
+    "message": "slow",
+    "description": "Badge marking a provider whose lookups are expensive."
+  },
+  "providerMoveUp": {
+    "message": "Move up",
+    "description": "Tooltip for the reorder-up button."
+  },
+  "providerMoveDown": {
+    "message": "Move down",
+    "description": "Tooltip for the reorder-down button."
+  },
+  "privacyHeader": {
+    "message": "Privacy",
+    "description": "Header for the privacy section."
+  },
+  "privacyModeLabel": {
+    "message": "Look up pictures online",
+    "description": "Label for the privacy mode selector."
+  },
+  "privacyModeOff": {
+    "message": "Use every enabled source",
+    "description": "Privacy mode: no restriction."
+  },
+  "privacyModeBalanced": {
+    "message": "Only the sender's own DNS records",
+    "description": "Privacy mode: DNS-backed lookups only."
+  },
+  "privacyModeStrict": {
+    "message": "Never — offline only",
+    "description": "Privacy mode: no network lookups."
+  },
+  "privacyModeOffHint": {
+    "message": "Every source you enable below may be contacted. Outside services will learn the domains, and in some cases the addresses, of people who write to you.",
+    "description": "Explanation of the off mode."
+  },
+  "privacyModeBalancedHint": {
+    "message": "Only BIMI is used: the logo the sender's domain publishes in DNS. No avatar or icon service is contacted, but Cloudflare's DNS resolver sees the sender's domain, and the logo is downloaded from wherever the sender chose, which can tell them when the message was listed. Fewer pictures will be found.",
+    "description": "Explanation of the balanced mode."
+  },
+  "privacyModeStrictHint": {
+    "message": "No pictures are looked up online. Only address book photos, pictures already cached, and generated initials are shown.",
+    "description": "Explanation of the strict mode."
+  },
+  "providerBadgeBlocked": {
+    "message": "blocked",
+    "description": "Badge marking a source disabled by the current privacy mode."
+  },
+  "settingsIntro": {
+    "message": "Show a picture for the people who write to you, taken from their address book entry or their organisation's logo."
+  },
+  "testDescription": {
+    "message": "See which picture an address resolves to with your current settings."
+  },
+  "cacheRefreshFoundLabel": {
+    "message": "Look up a saved picture again after"
+  },
+  "cacheRefreshFoundHelp": {
+    "message": "Picks up logo changes and newly published BIMI records. Longer means fewer lookups."
+  },
+  "cacheRefreshNotFoundLabel": {
+    "message": "Retry addresses with no picture after"
+  },
+  "cacheRefreshNotFoundHelp": {
+    "message": "Most addresses that have no picture never get one, so retrying often costs requests without finding anything."
+  },
+  "cacheInterval1Day": {
+    "message": "1 day"
+  },
+  "cacheInterval7Days": {
+    "message": "7 days"
+  },
+  "cacheInterval14Days": {
+    "message": "14 days"
+  },
+  "cacheInterval30Days": {
+    "message": "30 days"
+  },
+  "cacheInterval90Days": {
+    "message": "90 days"
+  },
+  "cacheIntervalNever": {
+    "message": "Never"
+  },
+  "appearanceStyleHeader": {
+    "message": "Appearance"
+  },
+  "avatarShapeLabel": {
+    "message": "Picture shape"
+  },
+  "avatarShapeCircle": {
+    "message": "Circle"
+  },
+  "avatarShapeRounded": {
+    "message": "Rounded square"
+  },
+  "avatarShapeSquare": {
+    "message": "Square"
+  },
+  "initialsColorLabel": {
+    "message": "Colour for initials"
+  },
+  "initialsColorAuto": {
+    "message": "One per sender"
+  },
+  "initialsColorNeutral": {
+    "message": "Same grey for everyone"
+  },
+  "initialsColorHelp": {
+    "message": "Initials are shown when no picture is found. A colour per sender makes them easier to tell apart; one grey keeps a long list calmer."
+  },
+  "overridesHeader": {
+    "message": "Rules for specific senders"
+  },
+  "overridesDescription": {
+    "message": "Override what is shown for one address or a whole domain. A rule for an address wins over a rule for its domain."
+  },
+  "overrideMatchPlaceholder": {
+    "message": "example.com or name@example.com"
+  },
+  "overrideUrlPlaceholder": {
+    "message": "https://example.com/logo.png"
+  },
+  "overrideModeHide": {
+    "message": "Show initials"
+  },
+  "overrideModeUrl": {
+    "message": "Use this picture"
+  },
+  "overrideAddButton": {
+    "message": "Add rule"
+  },
+  "overrideRemoveButton": {
+    "message": "Remove"
+  },
+  "overrideErrorMatch": {
+    "message": "Enter an address or a domain."
+  },
+  "overrideErrorDuplicate": {
+    "message": "There is already a rule for that address or domain."
+  },
+  "overrideErrorUrl": {
+    "message": "Enter a picture address starting with https://"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "manifest_version": 2,
+  "name": "Modern Cards View & Auto Profile Picture",
+  "version": "3.0.0",
+  "description": "Modern flat Cards View for Thunderbird: borderless cards, detailed Date Group headers with bottom borders & unread/total counters, 1-line message body preview, and automatic sender profile pictures.",
+  "author": "Noam SCHMITT",
+  "homepage_url": "https://astucesweb.fr/projets/auto-profile-picture/",
+  "icons": {
+    "128": "images/icon.svg",
+    "96": "images/icon.svg",
+    "64": "images/icon.svg",
+    "32": "images/icon.svg",
+    "16": "images/icon.svg"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "type": "module"
+  },
+  "default_locale": "en",
+  "permissions": [
+    "messagesRead",
+    "accountsRead",
+    "storage",
+    "addressBooks",
+    "<all_urls>"
+  ],
+  "experiment_apis": {
+    "headerApi": {
+      "schema": "api/headerApi.json",
+      "parent": {
+        "scopes": [
+          "addon_parent"
+        ],
+        "paths": [
+          [
+            "headerApi"
+          ]
+        ],
+        "script": "api/headerApi.js",
+        "events": [
+          "startup"
+        ]
+      }
+    }
+  },
+  "options_ui": {
+    "open_in_tab": false,
+    "page": "settings/options/index.html"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "modern-cards-view@thunderbird.addon",
+      "strict_min_version": "128.0",
+      "strict_max_version": "*"
+    }
+  }
+}

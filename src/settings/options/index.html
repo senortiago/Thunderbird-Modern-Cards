@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title data-l10n-id="extensionName">Auto Profile Picture</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="page">
+    <header class="page-header">
+      <h1 class="page-title" data-l10n-id="extensionName">Profile pictures</h1>
+      <p class="page-intro" data-l10n-id="settingsIntro">Show a picture for the people who write to you, taken from their address book entry or their organisation's logo.</p>
+    </header>
+
+    <section class="group" id="inbox">
+      <h2 class="group-title" data-l10n-id="appearanceHeader">Where pictures appear</h2>
+
+      <div class="setting">
+        <label class="setting-control">
+          <input name="contactsIntegration" id="contactsIntegration" type="checkbox" role="switch" />
+          <span data-l10n-id="contactsIntegrationLabel">Auto add profile picture when saving a contact</span>
+        </label>
+      </div>
+
+      <div class="setting">
+        <label class="setting-control">
+          <input name="inboxList" id="inboxList" type="checkbox" role="switch" />
+          <span data-l10n-id="inboxListLabel">Enable pictures in inbox list (Experimental)</span>
+        </label>
+        <p class="setting-help" data-l10n-id="inboxListDescription">Enable this option to show profile pictures in the inbox list.</p>
+        <p class="setting-help setting-note" data-l10n-id="inboxListExperimentalNote">This feature reaches into parts of Thunderbird that can change between releases. If the message list misbehaves, turn it off and report the problem.</p>
+      </div>
+    </section>
+
+    <section class="group" id="appearance">
+      <h2 class="group-title" data-l10n-id="appearanceStyleHeader">Appearance</h2>
+
+      <div class="setting">
+        <div class="setting-row">
+          <label class="setting-name" for="avatarShape" data-l10n-id="avatarShapeLabel">Picture shape</label>
+          <select id="avatarShape" name="avatarShape" class="setting-input">
+            <option value="circle" data-l10n-id="avatarShapeCircle">Circle</option>
+            <option value="rounded" data-l10n-id="avatarShapeRounded">Rounded square</option>
+            <option value="square" data-l10n-id="avatarShapeSquare">Square</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="setting">
+        <div class="setting-row">
+          <label class="setting-name" for="initialsColor" data-l10n-id="initialsColorLabel">Colour for initials</label>
+          <select id="initialsColor" name="initialsColor" class="setting-input">
+            <option value="auto" data-l10n-id="initialsColorAuto">One per sender</option>
+            <option value="neutral" data-l10n-id="initialsColorNeutral">Same grey for everyone</option>
+          </select>
+        </div>
+        <p class="setting-help" data-l10n-id="initialsColorHelp">Initials are shown when no picture is found. A colour per sender makes them easier to tell apart; one grey keeps a long list calmer.</p>
+      </div>
+    </section>
+
+    <section class="group" id="privacy">
+      <h2 class="group-title" data-l10n-id="privacyHeader">Privacy</h2>
+
+      <div class="setting">
+        <div class="setting-row">
+          <label class="setting-name" for="privacyMode" data-l10n-id="privacyModeLabel">Look up pictures online</label>
+          <select id="privacyMode" name="privacyMode" class="setting-input">
+            <option value="off" data-l10n-id="privacyModeOff">Use every enabled source</option>
+            <option value="balanced" data-l10n-id="privacyModeBalanced">Only the sender's own DNS records</option>
+            <option value="strict" data-l10n-id="privacyModeStrict">Never — offline only</option>
+          </select>
+        </div>
+        <p class="setting-help" id="privacyModeHint"></p>
+      </div>
+    </section>
+
+    <section class="group" id="providers">
+      <h2 class="group-title" data-l10n-id="providersHeader">Picture sources</h2>
+      <p class="group-intro" data-l10n-id="providersDescription">Sources are tried from top to bottom, and the first picture found is used. Turning off sources you don't need makes lookups faster.</p>
+      <ul id="providerList" class="provider-list"></ul>
+    </section>
+
+    <section class="group" id="overrides">
+      <h2 class="group-title" data-l10n-id="overridesHeader">Rules for specific senders</h2>
+      <p class="group-intro" data-l10n-id="overridesDescription">Override what is shown for one address or a whole domain. A rule for an address wins over a rule for its domain.</p>
+      <ul id="overrideList" class="override-list"></ul>
+      <div class="override-add">
+        <input type="text" id="overrideMatch" placeholder="example.com or name@example.com" data-l10n-attr-placeholder="overrideMatchPlaceholder" />
+        <select id="overrideMode">
+          <option value="hide" data-l10n-id="overrideModeHide">Show initials</option>
+          <option value="url" data-l10n-id="overrideModeUrl">Use this picture</option>
+        </select>
+        <input type="url" id="overrideUrl" placeholder="https://example.com/logo.png" data-l10n-attr-placeholder="overrideUrlPlaceholder" hidden />
+        <button type="button" id="overrideAdd" data-l10n-id="overrideAddButton">Add rule</button>
+      </div>
+      <p class="setting-help" id="overrideError" role="alert" hidden></p>
+    </section>
+
+    <section class="group" id="cache">
+      <h2 class="group-title" data-l10n-id="savedPicturesHeader">Saved pictures</h2>
+      <div class="setting-row">
+        <span class="setting-name"><span data-l10n-id="cacheSizeLabel">Size:</span> <span id="cacheSize"></span></span>
+        <button id="clearCache" class="secondary" data-l10n-id="clearCacheButton">Clear Cache</button>
+      </div>
+
+      <div class="setting">
+        <div class="setting-row">
+          <label class="setting-name" for="cacheRefreshFound" data-l10n-id="cacheRefreshFoundLabel">Look up a saved picture again after</label>
+          <select id="cacheRefreshFound" name="cacheRefreshFound" class="setting-input">
+            <option value="7" data-l10n-id="cacheInterval7Days">7 days</option>
+            <option value="14" data-l10n-id="cacheInterval14Days">14 days</option>
+            <option value="30" data-l10n-id="cacheInterval30Days">30 days</option>
+            <option value="90" data-l10n-id="cacheInterval90Days">90 days</option>
+            <option value="0" data-l10n-id="cacheIntervalNever">Never</option>
+          </select>
+        </div>
+        <p class="setting-help" data-l10n-id="cacheRefreshFoundHelp">Picks up logo changes and newly published BIMI records. Longer means fewer lookups.</p>
+      </div>
+
+      <div class="setting">
+        <div class="setting-row">
+          <label class="setting-name" for="cacheRefreshNotFound" data-l10n-id="cacheRefreshNotFoundLabel">Retry addresses with no picture after</label>
+          <select id="cacheRefreshNotFound" name="cacheRefreshNotFound" class="setting-input">
+            <option value="1" data-l10n-id="cacheInterval1Day">1 day</option>
+            <option value="7" data-l10n-id="cacheInterval7Days">7 days</option>
+            <option value="30" data-l10n-id="cacheInterval30Days">30 days</option>
+            <option value="0" data-l10n-id="cacheIntervalNever">Never</option>
+          </select>
+        </div>
+        <p class="setting-help" data-l10n-id="cacheRefreshNotFoundHelp">Most addresses that have no picture never get one, so retrying often costs requests without finding anything.</p>
+      </div>
+    </section>
+
+    <section class="group" id="test">
+      <h2 class="group-title" data-l10n-id="testHeader">Check a profile picture</h2>
+      <p class="group-intro" data-l10n-id="testDescription">See which picture an address resolves to with your current settings.</p>
+      <fieldset role="group">
+        <input name="email" type="email" placeholder="Email you want to test" autocomplete="email" id="email" required data-l10n-attr-placeholder="emailInputPlaceholder" />
+        <button id="fetchButton" data-l10n-id="fetchButtonLabel">Show</button>
+      </fieldset>
+      <article style="display:none" id="profilePicture" aria-busy="false"></article>
+    </section>
+  </main>
+  <script src="options.js" type="module"></script>
+</body>
+
+</html>

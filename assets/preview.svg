@@ -1,0 +1,234 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 720" width="860" height="720" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <clipPath id="windowClip">
+      <rect x="0" y="0" width="860" height="720" rx="10" ry="10" />
+    </clipPath>
+    <linearGradient id="ghGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#24292f" />
+      <stop offset="100%" stop-color="#111317" />
+    </linearGradient>
+    <linearGradient id="stripeGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#635bff" />
+      <stop offset="100%" stop-color="#4b42e6" />
+    </linearGradient>
+    <linearGradient id="vercelGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#000000" />
+      <stop offset="100%" stop-color="#27272a" />
+    </linearGradient>
+    <linearGradient id="linearGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5e6ad2" />
+      <stop offset="100%" stop-color="#3b439f" />
+    </linearGradient>
+    <linearGradient id="cfGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f6821f" />
+      <stop offset="100%" stop-color="#e05e00" />
+    </linearGradient>
+  </defs>
+
+  <g clip-path="url(#windowClip)">
+    <!-- Background -->
+    <rect x="0" y="0" width="860" height="720" fill="#1e1e1e" />
+
+    <!-- Top Folder Header Bar -->
+    <rect x="0" y="0" width="860" height="48" fill="#18181b" />
+    <line x1="0" y1="48" x2="860" y2="48" stroke="#2d2d32" stroke-width="1" />
+
+    <!-- Inbox Title & Counter -->
+    <text x="20" y="30" fill="#f4f4f5" font-size="16" font-weight="700">Inbox</text>
+    <text x="76" y="30" fill="#a1a1aa" font-size="13" font-weight="500">2,418 Messages</text>
+
+    <!-- Quick Filter Pill -->
+    <rect x="708" y="11" width="120" height="26" rx="5" fill="#27272a" stroke="#3a3a3f" stroke-width="1" />
+    <circle cx="724" cy="23" r="4.5" fill="none" stroke="#a1a1aa" stroke-width="1.5" />
+    <line x1="727.5" y1="26.5" x2="731" y2="30" stroke="#a1a1aa" stroke-width="1.5" stroke-linecap="round" />
+    <text x="738" y="28" fill="#d4d4d8" font-size="12" font-weight="500">Quick Filter</text>
+
+    <!-- ===================================================================
+         GROUP 1: TODAY
+         =================================================================== -->
+    <g transform="translate(0, 56)">
+      <!-- Chevron -->
+      <path d="M 16 20 L 21 25 L 26 20" fill="none" stroke="#a1a1aa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+      <!-- Date Group Header Title -->
+      <text x="36" y="26" fill="#e4e4e7" font-size="18.3" font-weight="700">Today</text>
+      <!-- Right-aligned Unread / Total Counter -->
+      <text x="840" y="26" fill="#a1a1aa" font-size="15" font-weight="500" text-anchor="end">
+        <tspan fill="#f4f4f5" font-weight="700">2</tspan> / <tspan fill="#f4f4f5" font-weight="700">3</tspan> Messages
+      </text>
+      <!-- Bottom Border -->
+      <line x1="8" y1="36" x2="846" y2="36" stroke="#3a3a3f" stroke-width="1" />
+    </g>
+
+    <!-- ROW 1 (Unread + Selected) -->
+    <g transform="translate(0, 96)">
+      <!-- Subtle Selected Row Highlight -->
+      <rect x="0" y="0" width="860" height="72" fill="rgba(255, 255, 255, 0.09)" />
+      <!-- Unread Indicator Dot -->
+      <circle cx="15" cy="36" r="4" fill="#3b82f6" />
+      <!-- Avatar: GitHub -->
+      <circle cx="48" cy="36" r="19" fill="url(#ghGrad)" stroke="#3f3f46" stroke-width="1" />
+      <text x="48" y="41" fill="#ffffff" font-size="13" font-weight="700" text-anchor="middle">GH</text>
+
+      <!-- Line 1: Sender & Date -->
+      <text x="78" y="22" fill="#ffffff" font-size="17" font-weight="700">GitHub Notifications</text>
+      <text x="840" y="22" fill="#a1a1aa" font-size="14.8" text-anchor="end">19:42</text>
+
+      <!-- Line 2: Subject -->
+      <text x="78" y="42" fill="#ffffff" font-size="16.2" font-weight="700">[thunderbird-modern-cards] Release v3.0.0 — Unified Folders &amp; Modern Cards View (#42)</text>
+      <!-- Star icon -->
+      <path d="M 833 32 L 835 36.5 L 840 37.2 L 836.4 40.6 L 837.3 45.5 L 833 43.2 L 828.7 45.5 L 829.6 40.6 L 826 37.2 L 831 36.5 Z" fill="#f59e0b" />
+
+      <!-- Line 3: 1-Line Body Preview -->
+      <text x="78" y="61" fill="#9ca3af" font-size="15.7" font-weight="400">Merged #42 into main. All 37,039 messages in Unified Folders now load and expand cleanly across Date Groups...</text>
+    </g>
+
+    <!-- ROW 2 (Unread) -->
+    <g transform="translate(0, 168)">
+      <!-- Unread Indicator Dot -->
+      <circle cx="15" cy="36" r="4" fill="#3b82f6" />
+      <!-- Avatar: Stripe -->
+      <circle cx="48" cy="36" r="19" fill="url(#stripeGrad)" />
+      <text x="48" y="42" fill="#ffffff" font-size="16" font-weight="800" text-anchor="middle">S</text>
+
+      <!-- Line 1: Sender & Date -->
+      <text x="78" y="22" fill="#ffffff" font-size="17" font-weight="700">Stripe</text>
+      <text x="840" y="22" fill="#a1a1aa" font-size="14.8" text-anchor="end">16:15</text>
+
+      <!-- Line 2: Subject -->
+      <text x="78" y="42" fill="#ffffff" font-size="16.2" font-weight="700">Your October payout of €2,840.00 is on the way to your bank account</text>
+      <!-- Star outline -->
+      <path d="M 833 32 L 835 36.5 L 840 37.2 L 836.4 40.6 L 837.3 45.5 L 833 43.2 L 828.7 45.5 L 829.6 40.6 L 826 37.2 L 831 36.5 Z" fill="none" stroke="#52525b" stroke-width="1.3" />
+
+      <!-- Line 3: 1-Line Body Preview -->
+      <text x="78" y="61" fill="#9ca3af" font-size="15.7" font-weight="400">Hi there, we have initiated a payout of €2,840.00 to your bank account ending in •••• 4921. Expected arrival: Monday...</text>
+    </g>
+
+    <!-- ROW 3 (Read) -->
+    <g transform="translate(0, 240)">
+      <!-- Read Indicator Dot (subtle hollow) -->
+      <circle cx="15" cy="36" r="3" fill="none" stroke="#52525b" stroke-width="1.2" />
+      <!-- Avatar: Deterministic Colored Initials -->
+      <circle cx="48" cy="36" r="19" fill="#2b4c5e" />
+      <text x="48" y="41" fill="#e4e4e7" font-size="13" font-weight="700" text-anchor="middle">EM</text>
+
+      <!-- Line 1: Sender & Date -->
+      <text x="78" y="22" fill="#f4f4f5" font-size="17" font-weight="600">Elena Marchetti</text>
+      <text x="840" y="22" fill="#a1a1aa" font-size="14.8" text-anchor="end">11:08</text>
+
+      <!-- Line 2: Subject -->
+      <text x="78" y="42" fill="#e4e4e7" font-size="16.2" font-weight="400">Re: Q4 Design System Review &amp; Typography Specs</text>
+      <path d="M 833 32 L 835 36.5 L 840 37.2 L 836.4 40.6 L 837.3 45.5 L 833 43.2 L 828.7 45.5 L 829.6 40.6 L 826 37.2 L 831 36.5 Z" fill="none" stroke="#52525b" stroke-width="1.3" />
+
+      <!-- Line 3: 1-Line Body Preview -->
+      <text x="78" y="61" fill="#9ca3af" font-size="15.7" font-weight="400">Thanks for sending over the updated tokens! The +1px font bump on the card list makes scanning much easier on 1440p...</text>
+    </g>
+
+    <!-- ===================================================================
+         GROUP 2: YESTERDAY
+         =================================================================== -->
+    <g transform="translate(0, 320)">
+      <!-- Chevron -->
+      <path d="M 16 20 L 21 25 L 26 20" fill="none" stroke="#a1a1aa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+      <!-- Date Group Header Title -->
+      <text x="36" y="26" fill="#e4e4e7" font-size="18.3" font-weight="700">Yesterday</text>
+      <!-- Right-aligned Unread / Total Counter -->
+      <text x="840" y="26" fill="#a1a1aa" font-size="15" font-weight="500" text-anchor="end">
+        <tspan fill="#f4f4f5" font-weight="700">12</tspan> Messages
+      </text>
+      <!-- Bottom Border -->
+      <line x1="8" y1="36" x2="846" y2="36" stroke="#3a3a3f" stroke-width="1" />
+    </g>
+
+    <!-- ROW 4 (Read) -->
+    <g transform="translate(0, 360)">
+      <circle cx="15" cy="36" r="3" fill="none" stroke="#52525b" stroke-width="1.2" />
+      <!-- Avatar: Cloudflare -->
+      <circle cx="48" cy="36" r="19" fill="url(#cfGrad)" />
+      <text x="48" y="41" fill="#ffffff" font-size="13" font-weight="700" text-anchor="middle">CF</text>
+
+      <!-- Line 1: Sender & Date -->
+      <text x="78" y="22" fill="#f4f4f5" font-size="17" font-weight="600">Cloudflare</text>
+      <text x="840" y="22" fill="#a1a1aa" font-size="14.8" text-anchor="end">Yesterday, 18:24</text>
+
+      <!-- Line 2: Subject -->
+      <text x="78" y="42" fill="#e4e4e7" font-size="16.2" font-weight="400">SSL/TLS certificate renewed successfully for *.example.com</text>
+      <path d="M 833 32 L 835 36.5 L 840 37.2 L 836.4 40.6 L 837.3 45.5 L 833 43.2 L 828.7 45.5 L 829.6 40.6 L 826 37.2 L 831 36.5 Z" fill="none" stroke="#52525b" stroke-width="1.3" />
+
+      <!-- Line 3: 1-Line Body Preview -->
+      <text x="78" y="61" fill="#9ca3af" font-size="15.7" font-weight="400">Your Universal SSL edge certificate has been automatically renewed and deployed across all global edge locations...</text>
+    </g>
+
+    <!-- ROW 5 (Read) -->
+    <g transform="translate(0, 432)">
+      <circle cx="15" cy="36" r="3" fill="none" stroke="#52525b" stroke-width="1.2" />
+      <!-- Avatar: Linear -->
+      <circle cx="48" cy="36" r="19" fill="url(#linearGrad)" />
+      <text x="48" y="41" fill="#ffffff" font-size="14" font-weight="700" text-anchor="middle">L</text>
+
+      <!-- Line 1: Sender & Date -->
+      <text x="78" y="22" fill="#f4f4f5" font-size="17" font-weight="600">Linear</text>
+      <text x="840" y="22" fill="#a1a1aa" font-size="14.8" text-anchor="end">Yesterday, 10:05</text>
+
+      <!-- Line 2: Subject -->
+      <text x="78" y="42" fill="#e4e4e7" font-size="16.2" font-weight="400">Cycle 14 Digest — 18 issues completed this week</text>
+      <path d="M 833 32 L 835 36.5 L 840 37.2 L 836.4 40.6 L 837.3 45.5 L 833 43.2 L 828.7 45.5 L 829.6 40.6 L 826 37.2 L 831 36.5 Z" fill="none" stroke="#52525b" stroke-width="1.3" />
+
+      <!-- Line 3: 1-Line Body Preview -->
+      <text x="78" y="61" fill="#9ca3af" font-size="15.7" font-weight="400">Cycle 14 wrapped up with 94% completion rate. Cycle 15 starts automatically tomorrow morning with 11 scheduled items...</text>
+    </g>
+
+    <!-- ===================================================================
+         GROUP 3: THURSDAY (WEEKDAY BUCKET)
+         =================================================================== -->
+    <g transform="translate(0, 512)">
+      <!-- Chevron -->
+      <path d="M 16 20 L 21 25 L 26 20" fill="none" stroke="#a1a1aa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+      <!-- Date Group Header Title -->
+      <text x="36" y="26" fill="#e4e4e7" font-size="18.3" font-weight="700">Thursday</text>
+      <!-- Right-aligned Unread / Total Counter -->
+      <text x="840" y="26" fill="#a1a1aa" font-size="15" font-weight="500" text-anchor="end">
+        <tspan fill="#f4f4f5" font-weight="700">1</tspan> / <tspan fill="#f4f4f5" font-weight="700">8</tspan> Messages
+      </text>
+      <!-- Bottom Border -->
+      <line x1="8" y1="36" x2="846" y2="36" stroke="#3a3a3f" stroke-width="1" />
+    </g>
+
+    <!-- ROW 6 (Unread) -->
+    <g transform="translate(0, 552)">
+      <circle cx="15" cy="36" r="4" fill="#3b82f6" />
+      <!-- Avatar: Vercel -->
+      <circle cx="48" cy="36" r="19" fill="url(#vercelGrad)" stroke="#3f3f46" stroke-width="1" />
+      <path d="M 48 27 L 56 41 L 40 41 Z" fill="#ffffff" />
+
+      <!-- Line 1: Sender & Date -->
+      <text x="78" y="22" fill="#ffffff" font-size="17" font-weight="700">Vercel</text>
+      <text x="840" y="22" fill="#a1a1aa" font-size="14.8" text-anchor="end">Thu 14:50</text>
+
+      <!-- Line 2: Subject -->
+      <text x="78" y="42" fill="#ffffff" font-size="16.2" font-weight="700">Production deployment ready — storefront-web-v2.vercel.app</text>
+      <path d="M 833 32 L 835 36.5 L 840 37.2 L 836.4 40.6 L 837.3 45.5 L 833 43.2 L 828.7 45.5 L 829.6 40.6 L 826 37.2 L 831 36.5 Z" fill="none" stroke="#52525b" stroke-width="1.3" />
+
+      <!-- Line 3: 1-Line Body Preview -->
+      <text x="78" y="61" fill="#9ca3af" font-size="15.7" font-weight="400">Build completed in 38s on commit a9f31d2. All edge middleware checks and Lighthouse performance budgets passed...</text>
+    </g>
+
+    <!-- ===================================================================
+         GROUP 4: LAST WEEK
+         =================================================================== -->
+    <g transform="translate(0, 632)">
+      <!-- Chevron -->
+      <path d="M 16 20 L 21 25 L 26 20" fill="none" stroke="#a1a1aa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+      <!-- Date Group Header Title -->
+      <text x="36" y="26" fill="#e4e4e7" font-size="18.3" font-weight="700">Last Week</text>
+      <!-- Right-aligned Unread / Total Counter -->
+      <text x="840" y="26" fill="#a1a1aa" font-size="15" font-weight="500" text-anchor="end">
+        <tspan fill="#f4f4f5" font-weight="700">4</tspan> / <tspan fill="#f4f4f5" font-weight="700">64</tspan> Messages
+      </text>
+      <!-- Bottom Border -->
+      <line x1="8" y1="36" x2="846" y2="36" stroke="#3a3a3f" stroke-width="1" />
+    </g>
+
+    <!-- Outer border frame -->
+    <rect x="0.5" y="0.5" width="859" height="719" rx="10" ry="10" fill="none" stroke="#323238" stroke-width="1" />
+  </g>
+</svg>

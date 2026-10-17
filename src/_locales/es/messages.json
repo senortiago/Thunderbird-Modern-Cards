@@ -1,0 +1,249 @@
+{
+  "extensionName": {
+    "message": "Foto de perfil automática",
+    "description": "Nombre de la extensión."
+  },
+  "extensionDescription": {
+    "message": "Muestra una foto de cada remitente en Thunderbird. Elige las fuentes, controla qué revela cada consulta y define reglas por remitente.",
+    "description": "Descripción de la extensión."
+  },
+  "appearanceHeader": {
+    "message": "Dónde aparecen las imágenes",
+    "description": "Encabezado para la sección de características."
+  },
+  "contactsIntegrationLabel": {
+    "message": "Añadir automáticamente una foto de perfil al guardar un contacto",
+    "description": "Etiqueta para la casilla de verificación de integración de contactos."
+  },
+  "inboxListLabel": {
+    "message": "Habilitar imágenes en la lista de la bandeja de entrada (Experimental)",
+    "description": "Etiqueta para la casilla de verificación de la lista de la bandeja de entrada."
+  },
+  "inboxListDescription": {
+    "message": "Muestra una imagen junto a cada mensaje de la lista.",
+    "description": "Descripción de la función de la lista de la bandeja de entrada."
+  },
+  "inboxListExperimentalNote": {
+    "message": "Esta función usa partes de Thunderbird que pueden cambiar entre versiones. Si la lista de mensajes falla, desactívala y comunica el problema.",
+    "description": "Mensaje de advertencia para la característica de la lista de la bandeja de entrada."
+  },
+  "savedPicturesHeader": {
+    "message": "Imágenes guardadas",
+    "description": "Encabezado para la sección de caché."
+  },
+  "cacheSizeLabel": {
+    "message": "Tamaño:",
+    "description": "Etiqueta para la visualización del tamaño de la caché."
+  },
+  "clearCacheButton": {
+    "message": "Limpiar caché",
+    "description": "Etiqueta para el botón de limpiar caché."
+  },
+  "cacheCleared": {
+    "message": "Caché limpiada",
+    "description": "Mensaje mostrado cuando se limpia la caché."
+  },
+  "profilePictureNotFound": {
+    "message": "Foto de perfil no encontrada",
+    "description": "Mensaje mostrado cuando no se encuentra la foto de perfil."
+  },
+  "errorDisplayingImage": {
+    "message": "Error al mostrar la imagen (ver consola para detalles)",
+    "description": "Mensaje de error mostrado cuando hay un error al mostrar la imagen."
+  },
+  "testHeader": {
+    "message": "Verificar una foto de perfil",
+    "description": "Encabezado para la sección de prueba."
+  },
+  "emailInputPlaceholder": {
+    "message": "Correo electrónico que deseas probar",
+    "description": "Marcador de posición para el campo de entrada de correo electrónico."
+  },
+  "fetchButtonLabel": {
+    "message": "Mostrar",
+    "description": "Etiqueta para el botón de obtener."
+  },
+  "noIcons": {
+    "message": "Sin iconos",
+    "description": "Conteo mostrado cuando no hay iconos almacenados en la caché."
+  },
+  "oneIcon": {
+    "message": "1 icono",
+    "description": "Conteo mostrado cuando hay 1 icono almacenado en la caché."
+  },
+  "multipleIcons": {
+    "message": "$NB$ iconos",
+    "description": "Conteo mostrado cuando hay varios iconos almacenados en la caché.",
+    "placeholders": {
+      "NB": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "providersHeader": {
+    "message": "Fuentes de imágenes"
+  },
+  "providersDescription": {
+    "message": "Las fuentes se prueban de arriba abajo y se usa la primera imagen encontrada. Desactivar las que no necesites acelera las búsquedas."
+  },
+  "providerBimi": {
+    "message": "BIMI (dominio del remitente)"
+  },
+  "providerGravatar": {
+    "message": "Gravatar"
+  },
+  "providerLibravatar": {
+    "message": "Libravatar"
+  },
+  "providerDuckDuckGo": {
+    "message": "DuckDuckGo"
+  },
+  "providerGoogle": {
+    "message": "Google"
+  },
+  "providerIconHorse": {
+    "message": "Icon Horse"
+  },
+  "providerSplitbee": {
+    "message": "Splitbee"
+  },
+  "providerFaviconWebpage": {
+    "message": "Icono del sitio web (sitio del remitente)"
+  },
+  "providerBadgeThirdParty": {
+    "message": "terceros"
+  },
+  "providerBadgeSlow": {
+    "message": "lento"
+  },
+  "providerMoveUp": {
+    "message": "Subir"
+  },
+  "providerMoveDown": {
+    "message": "Bajar"
+  },
+  "privacyHeader": {
+    "message": "Privacidad"
+  },
+  "privacyModeLabel": {
+    "message": "Buscar imágenes en línea"
+  },
+  "privacyModeOff": {
+    "message": "Usar todas las fuentes activadas"
+  },
+  "privacyModeBalanced": {
+    "message": "Solo los registros DNS del remitente"
+  },
+  "privacyModeStrict": {
+    "message": "Nunca — solo sin conexión"
+  },
+  "privacyModeOffHint": {
+    "message": "Se puede contactar con cualquier fuente que actives abajo. Servicios externos conocerán los dominios, y en algunos casos las direcciones, de quienes te escriben."
+  },
+  "privacyModeBalancedHint": {
+    "message": "Solo se usa BIMI: el logotipo que el dominio del remitente publica en el DNS. No se contacta con ningún servicio de avatares ni de iconos, pero el resolvedor DNS de Cloudflare ve el dominio del remitente, y el logotipo se descarga desde donde el remitente elija, lo que puede indicarle cuándo se mostró el mensaje en la lista. Se encontrarán menos imágenes."
+  },
+  "privacyModeStrictHint": {
+    "message": "No se buscan imágenes en línea. Solo se muestran fotos de la libreta de direcciones, imágenes ya guardadas en caché e iniciales generadas."
+  },
+  "providerBadgeBlocked": {
+    "message": "bloqueado"
+  },
+  "settingsIntro": {
+    "message": "Muestra una imagen de quienes te escriben, tomada de su ficha en la libreta de direcciones o del logotipo de su organización."
+  },
+  "testDescription": {
+    "message": "Comprueba qué imagen se obtiene para una dirección con tu configuración actual."
+  },
+  "cacheRefreshFoundLabel": {
+    "message": "Volver a buscar una imagen guardada después de"
+  },
+  "cacheRefreshFoundHelp": {
+    "message": "Detecta cambios de logotipo y registros BIMI nuevos. Cuanto más largo, menos búsquedas."
+  },
+  "cacheRefreshNotFoundLabel": {
+    "message": "Reintentar direcciones sin imagen después de"
+  },
+  "cacheRefreshNotFoundHelp": {
+    "message": "La mayoría de direcciones sin imagen nunca llegan a tener una, así que reintentar a menudo gasta peticiones sin encontrar nada."
+  },
+  "cacheInterval1Day": {
+    "message": "1 día"
+  },
+  "cacheInterval7Days": {
+    "message": "7 días"
+  },
+  "cacheInterval14Days": {
+    "message": "14 días"
+  },
+  "cacheInterval30Days": {
+    "message": "30 días"
+  },
+  "cacheInterval90Days": {
+    "message": "90 días"
+  },
+  "cacheIntervalNever": {
+    "message": "Nunca"
+  },
+  "appearanceStyleHeader": {
+    "message": "Aspecto"
+  },
+  "avatarShapeLabel": {
+    "message": "Forma de la imagen"
+  },
+  "avatarShapeCircle": {
+    "message": "Círculo"
+  },
+  "avatarShapeRounded": {
+    "message": "Cuadrado redondeado"
+  },
+  "avatarShapeSquare": {
+    "message": "Cuadrado"
+  },
+  "initialsColorLabel": {
+    "message": "Color de las iniciales"
+  },
+  "initialsColorAuto": {
+    "message": "Uno por remitente"
+  },
+  "initialsColorNeutral": {
+    "message": "El mismo gris para todos"
+  },
+  "initialsColorHelp": {
+    "message": "Las iniciales se muestran cuando no se encuentra ninguna imagen. Un color por remitente facilita distinguirlos; un solo gris hace la lista más tranquila."
+  },
+  "overridesHeader": {
+    "message": "Reglas para remitentes concretos"
+  },
+  "overridesDescription": {
+    "message": "Cambia lo que se muestra para una dirección o un dominio entero. Una regla para una dirección tiene prioridad sobre la de su dominio."
+  },
+  "overrideMatchPlaceholder": {
+    "message": "ejemplo.com o nombre@ejemplo.com"
+  },
+  "overrideUrlPlaceholder": {
+    "message": "https://ejemplo.com/logo.png"
+  },
+  "overrideModeHide": {
+    "message": "Mostrar iniciales"
+  },
+  "overrideModeUrl": {
+    "message": "Usar esta imagen"
+  },
+  "overrideAddButton": {
+    "message": "Añadir regla"
+  },
+  "overrideRemoveButton": {
+    "message": "Quitar"
+  },
+  "overrideErrorMatch": {
+    "message": "Escribe una dirección o un dominio."
+  },
+  "overrideErrorDuplicate": {
+    "message": "Ya existe una regla para esa dirección o dominio."
+  },
+  "overrideErrorUrl": {
+    "message": "Escribe una dirección de imagen que empiece por https://"
+  }
+}

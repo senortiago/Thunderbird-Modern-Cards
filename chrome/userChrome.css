@@ -1,0 +1,237 @@
+/* ==========================================================================
+   Thunderbird Modern Flat Cards View
+   - Flat, borderless cards with subtle hover/selection
+   - 2-line message body preview below subject
+   - Larger Date Group headers with bottom border, left chevron,
+     and right-aligned Unread/Total message counters on the same line
+   ========================================================================== */
+
+:root {
+  /* Seamless flat background across the message list pane */
+  --tree-pane-background: light-dark(#ffffff, #1e1e1e) !important;
+  --tree-view-bg: light-dark(#ffffff, #1e1e1e) !important;
+
+  /* Remove default card box fill and borders */
+  --tree-card-background: transparent !important;
+  --tree-card-border: transparent !important;
+  --tree-card-border-hover: transparent !important;
+  --tree-card-border-focus: transparent !important;
+  --tree-card-border-selected: transparent !important;
+  --tree-card-border-selected-unfocused: transparent !important;
+  --tree-focus-outline: transparent !important;
+
+  /* Remove spacing and rounded box corners between rows */
+  --card-container-padding-block: 0px !important;
+  --listbox-border-radius: 0px !important;
+
+  /* Subtle flat row hover & selection highlights (matching screenshot) */
+  --tree-card-background-current: light-dark(rgba(0, 0, 0, 0.04), rgba(255, 255, 255, 0.045)) !important;
+  --tree-card-background-selected: light-dark(rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.09)) !important;
+  --tree-card-background-selected-current: light-dark(rgba(0, 0, 0, 0.09), rgba(255, 255, 255, 0.10)) !important;
+  --tree-card-background-current-unfocused: light-dark(rgba(0, 0, 0, 0.03), rgba(255, 255, 255, 0.035)) !important;
+  --tree-card-background-selected-unfocused: light-dark(rgba(0, 0, 0, 0.06), rgba(255, 255, 255, 0.075)) !important;
+  --tree-card-background-selected-current-unfocused: light-dark(rgba(0, 0, 0, 0.07), rgba(255, 255, 255, 0.085)) !important;
+  --tree-card-background-selected-current-unfocused-hover: light-dark(rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.095)) !important;
+
+  /* Avatar size for Auto Profile Picture add-on */
+  --recipient-avatar-size: 38px !important;
+}
+
+/* Remove outer padding around table cells in Cards View so rows are flush */
+#threadTree[rows="thread-card"] {
+  padding-block: 0 !important;
+  background-color: var(--tree-pane-background) !important;
+}
+
+[is="tree-view-table-body"] > .card-layout > td,
+#threadTree[rows="thread-card"] .card-layout > td {
+  padding: 0 !important;
+}
+
+/* Flat, borderless card container */
+[is="tree-view-table-body"] > .card-layout > td > .card-container,
+#threadTree[rows="thread-card"] .card-layout > td > .card-container {
+  background-color: var(--tree-card-background) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  padding-inline: 8px 12px !important;
+  padding-block: 5px !important;
+  align-items: center !important;
+}
+
+/* Hover state on unselected cards */
+[is="tree-view-table-body"] > .card-layout:hover:not(.selected) > td > .card-container {
+  background-color: light-dark(rgba(0, 0, 0, 0.04), rgba(255, 255, 255, 0.045)) !important;
+}
+
+/* Selected card state (focused and unfocused) */
+[is="tree-view-table-body"] > .card-layout.selected > td > .card-container {
+  background-color: light-dark(rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.095)) !important;
+}
+
+/* Avatar spacing and vertical alignment (Auto Profile Picture extension) */
+#threadTree[rows="thread-card"] .card-layout .recipient-avatar {
+  align-self: center !important;
+  margin-inline-start: 2px !important;
+  margin-inline-end: 10px !important;
+  margin-block: 0 !important;
+}
+
+/* Keep read-status indicator subtle and compact */
+#threadTree[rows="thread-card"] .card-layout .read-status-column {
+  padding-inline: 0 !important;
+  margin-inline-end: 2px !important;
+  justify-content: center !important;
+}
+
+/* Normal message card layout: Sender+Date row on top, Subject + 2-line Preview below */
+#threadTree[rows="thread-card"] .card-layout:not([data-properties~="dummy"]) .card-container > .thread-card-column:not(.read-status-column) {
+  gap: 2px !important;
+  padding-block: 1px !important;
+  justify-content: center !important;
+}
+
+#threadTree[rows="thread-card"] .card-layout:not([data-properties~="dummy"]) .card-container .thread-card-dynamic-row {
+  display: grid !important;
+  grid-template:
+    "button subject info" auto
+    / auto 1fr auto !important;
+  align-items: start !important;
+  gap: 4px !important;
+}
+
+#threadTree[rows="thread-card"] .card-layout:not([data-properties~="dummy"]) .thread-card-subject-container {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+  padding-inline-start: 0 !important;
+  overflow: hidden !important;
+  min-width: 0 !important;
+}
+
+/* Sender, Date, Subject, and 1-Line Body Preview typography (+1px) */
+#threadTree[rows="thread-card"] .card-layout:not([data-properties~="dummy"]) .sender {
+  font-size: calc(1.0rem + 1px) !important;
+  font-weight: 600 !important;
+  color: light-dark(#18181b, #f4f4f5) !important;
+  padding-inline-start: 0 !important;
+}
+
+#threadTree[rows="thread-card"] .card-layout:not([data-properties~="dummy"]) .date {
+  font-size: calc(0.86rem + 1px) !important;
+  color: light-dark(#71717a, #a1a1aa) !important;
+  opacity: 0.9 !important;
+}
+
+#threadTree[rows="thread-card"] .card-layout:not([data-properties~="dummy"]) .subject {
+  font-size: calc(0.95rem + 1px) !important;
+  line-height: 1.3 !important;
+  color: light-dark(#27272a, #e4e4e7) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  flex: 0 0 auto !important;
+}
+
+/* 1-line message body preview snippet with larger font size (+1px) */
+#threadTree[rows="thread-card"] .card-layout:not([data-properties~="dummy"]) .thread-card-preview {
+  display: block !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  font-size: calc(0.92rem + 1px) !important;
+  line-height: 1.35 !important;
+  color: light-dark(#71717a, #9ca3af) !important;
+  font-weight: 400 !important;
+}
+
+/* Unread messages: brighter/bolder sender & subject */
+#threadTree[rows="thread-card"] .card-layout[data-properties~="unread"] .sender,
+#threadTree[rows="thread-card"] .card-layout[data-properties~="unread"] .subject {
+  font-weight: 700 !important;
+  color: light-dark(#09090b, #ffffff) !important;
+}
+
+/* ==========================================================================
+   Grouped-by-Date Section Headers
+   ("Today", "Yesterday", "Wednesday"..."Monday", "Last Week", "Two Weeks Ago", "Older")
+   ========================================================================== */
+[is="tree-view-table-body"] > .card-layout[data-properties~="dummy"] > td > .card-container,
+#threadTree[rows="thread-card"] .card-layout[data-properties~="dummy"] > td > .card-container {
+  background-color: transparent !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: 1px solid light-dark(#d4d4d8, #3a3a3f) !important;
+  padding-inline: 8px 14px !important;
+  padding-top: 0 !important;
+  padding-bottom: 7px !important;
+  align-items: flex-end !important;
+}
+
+/* Hide normal card elements on Date Group header rows */
+#threadTree[rows="thread-card"] .card-layout[data-properties~="dummy"] .read-status,
+#threadTree[rows="thread-card"] .card-layout[data-properties~="dummy"] .thread-card-column:first-of-type,
+#threadTree[rows="thread-card"] .card-layout[data-properties~="dummy"] .thread-card-row:first-of-type,
+#threadTree[rows="thread-card"] .card-layout[data-properties~="dummy"] .thread-card-icon-info,
+#threadTree[rows="thread-card"] .card-layout[data-properties~="dummy"] .thread-card-preview,
+#threadTree[rows="thread-card"] .card-layout[data-properties~="dummy"] .recipient-avatar {
+  display: none !important;
+}
+
+#threadTree[rows="thread-card"] .card-layout[data-properties~="dummy"] .card-container > .thread-card-column {
+  margin-inline-start: 0 !important;
+  padding-block: 0 !important;
+  justify-content: flex-end !important;
+  block-size: 100% !important;
+  inline-size: 100% !important;
+}
+
+/* Single horizontal row: [v] [Yesterday (Large)] .......... [Unread / Total] */
+#threadTree[rows="thread-card"] .card-layout[data-properties~="dummy"] .card-container .thread-card-dynamic-row {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  inline-size: 100% !important;
+  gap: 8px !important;
+}
+
+#threadTree[rows="thread-card"] .card-layout[data-properties~="dummy"] button.twisty {
+  order: 1 !important;
+  flex: 0 0 auto !important;
+}
+
+#threadTree[rows="thread-card"] .card-layout[data-properties~="dummy"] .thread-card-subject-container {
+  order: 2 !important;
+  flex: 1 1 auto !important;
+  padding-inline-start: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Larger Date Group Header title ("Yesterday", "Wednesday", "Last Week", etc.) (+1px) */
+#threadTree[rows="thread-card"] .card-layout[data-properties~="dummy"] .subject {
+  font-size: calc(1.08rem + 1px) !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  color: light-dark(#18181b, #e4e4e7) !important;
+}
+
+/* Right-aligned Unread / Total Messages counter on the same line (+1px) */
+#threadTree[rows="thread-card"] .card-layout[data-properties~="dummy"] .sort-header-details {
+  display: inline-block !important;
+  order: 3 !important;
+  flex: 0 0 auto !important;
+  margin-inline-start: auto !important;
+  font-size: calc(0.88rem + 1px) !important;
+  font-weight: 500 !important;
+  color: light-dark(#71717a, #a1a1aa) !important;
+  white-space: nowrap !important;
+}
+
+#threadTree[rows="thread-card"] .card-layout[data-properties~="dummy"] .sort-header-details > span {
+  font-weight: 700 !important;
+  color: light-dark(#18181b, #f4f4f5) !important;
+}

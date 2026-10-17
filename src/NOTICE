@@ -1,0 +1,38 @@
+Auto Profile Picture
+====================
+
+Copyright (c) Noam SCHMITT
+https://astucesweb.fr/projets/auto-profile-picture/
+Licensed under the Mozilla Public License, v. 2.0. See LICENSE for the full
+text, or obtain a copy at https://mozilla.org/MPL/2.0/.
+
+
+Contributors & Fork Integrations
+--------------------------------
+
+Version 2.6.0 incorporates substantial performance improvements, privacy modes,
+SVG security hardening, and settings redesign from:
+- Sergio Tabernero Hernández (El-Mundos / Kalos Tech)
+  https://github.com/El-Mundos/thunderbird-better-profile-pictures
+- Clément Gayot
+  https://github.com/clement-gayot
+
+Copyright (c) 2026 Sergio Tabernero Hernández
+Copyright (c) 2026 Clément Gayot
+Licensed under the Mozilla Public License, v. 2.0.
+
+
+Third-party components
+----------------------
+
+libs/ical.js
+    ICAL.js 2.2.1, used to parse vCards from the address book. This is the
+    official dist build, shipped unmodified, with its upstream MPL header
+    intact. Licensed under the Mozilla Public License, v. 2.0.
+    Copyright (c) Philipp Kewisch.
+    https://github.com/kewisch/ical.js
+
+settings/options/style.css
+    Includes a vendored subset of Pico CSS, licensed under the MIT Licence.
+    The vendored subset carries no copyright comment; it is restated here.
+    https://github.com/picocss/pico
