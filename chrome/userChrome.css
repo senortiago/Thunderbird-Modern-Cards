@@ -79,11 +79,50 @@
   margin-block: 0 !important;
 }
 
-/* Keep read-status indicator subtle and compact */
-#threadTree[rows="thread-card"] .card-layout .read-status-column {
-  padding-inline: 0 !important;
-  margin-inline-end: 2px !important;
+/* Read/Unread Status Indicator:
+   - Always visible on regular message cards so avatars align vertically
+   - Unread: Solid bright blue dot (8px diameter)
+   - Read: Subtle hollow outline circle (6px diameter, 1.2px stroke)
+   - Hidden completely on Date Group header rows */
+#threadTree[rows="thread-card"] .card-layout:not([data-properties~="dummy"]) .read-status-column {
+  display: flex !important;
+  align-items: center !important;
   justify-content: center !important;
+  inline-size: 14px !important;
+  min-inline-size: 14px !important;
+  max-inline-size: 14px !important;
+  margin-inline: 0 4px !important;
+  padding: 0 !important;
+}
+
+#threadTree[rows="thread-card"] .card-layout:not([data-properties~="dummy"]) .read-status {
+  display: inline-block !important;
+  --read-status-display: inline-block !important;
+  inline-size: 8px !important;
+  block-size: 8px !important;
+  min-inline-size: 8px !important;
+  min-block-size: 8px !important;
+  vertical-align: middle !important;
+}
+
+/* Unread: Solid bright blue dot (#3b82f6) */
+#threadTree[rows="thread-card"] .card-layout:not([data-properties~="dummy"])[data-properties~="unread"] .read-status {
+  --read-status-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8" width="8" height="8"><circle cx="4" cy="4" r="4" fill="%233b82f6"/></svg>') !important;
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8" width="8" height="8"><circle cx="4" cy="4" r="4" fill="%233b82f6"/></svg>') !important;
+}
+
+/* Read (Dark theme): Subtle hollow outline circle (#52525b) */
+#threadTree[rows="thread-card"] .card-layout:not([data-properties~="dummy"]):not([data-properties~="unread"]) .read-status {
+  --read-status-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8" width="8" height="8"><circle cx="4" cy="4" r="3" fill="none" stroke="%2352525b" stroke-width="1.2"/></svg>') !important;
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8" width="8" height="8"><circle cx="4" cy="4" r="3" fill="none" stroke="%2352525b" stroke-width="1.2"/></svg>') !important;
+}
+
+/* Read (Light theme): Subtle hollow outline circle (#a1a1aa) */
+@media (prefers-color-scheme: light) {
+  #threadTree[rows="thread-card"] .card-layout:not([data-properties~="dummy"]):not([data-properties~="unread"]) .read-status {
+    --read-status-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8" width="8" height="8"><circle cx="4" cy="4" r="3" fill="none" stroke="%23a1a1aa" stroke-width="1.2"/></svg>') !important;
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8" width="8" height="8"><circle cx="4" cy="4" r="3" fill="none" stroke="%23a1a1aa" stroke-width="1.2"/></svg>') !important;
+  }
 }
 
 /* Normal message card layout: Sender+Date row on top, Subject + 2-line Preview below */
@@ -172,6 +211,7 @@
 }
 
 /* Hide normal card elements on Date Group header rows */
+#threadTree[rows="thread-card"] .card-layout[data-properties~="dummy"] .read-status-column,
 #threadTree[rows="thread-card"] .card-layout[data-properties~="dummy"] .read-status,
 #threadTree[rows="thread-card"] .card-layout[data-properties~="dummy"] .thread-card-column:first-of-type,
 #threadTree[rows="thread-card"] .card-layout[data-properties~="dummy"] .thread-card-row:first-of-type,
