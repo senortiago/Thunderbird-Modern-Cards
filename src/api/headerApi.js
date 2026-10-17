@@ -958,6 +958,20 @@ function installCss(window) {
   }
 }
 
+/* Account indicator bar in Cards View (Unified Folders) */
+#threadTree[rows="thread-card"] .card-layout:not([data-properties~="dummy"]) .account-indicator {
+  box-sizing: border-box !important;
+  border-radius: 2px !important;
+  inline-size: 3.5px !important;
+  min-inline-size: 3.5px !important;
+  max-inline-size: 3.5px !important;
+  block-size: 13px !important;
+  margin-inline-start: 0 !important;
+  margin-inline-end: 6px !important;
+  align-self: center !important;
+  background-color: var(--account-color) !important;
+}
+
 /* Normal message card layout: Sender+Date row on top, Subject + 2-line Preview below */
 #threadTree[rows="thread-card"] .card-layout:not([data-properties~="dummy"]) .card-container > .thread-card-column:not(.read-status-column) {
   gap: 2px !important;
@@ -1050,7 +1064,8 @@ function installCss(window) {
 #threadTree[rows="thread-card"] .card-layout[data-properties~="dummy"] .thread-card-row:first-of-type,
 #threadTree[rows="thread-card"] .card-layout[data-properties~="dummy"] .thread-card-icon-info,
 #threadTree[rows="thread-card"] .card-layout[data-properties~="dummy"] .thread-card-preview,
-#threadTree[rows="thread-card"] .card-layout[data-properties~="dummy"] .recipient-avatar {
+#threadTree[rows="thread-card"] .card-layout[data-properties~="dummy"] .recipient-avatar,
+#threadTree[rows="thread-card"] .card-layout[data-properties~="dummy"] .account-indicator {
   display: none !important;
 }
 

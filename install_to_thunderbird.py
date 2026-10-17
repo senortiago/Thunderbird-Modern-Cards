@@ -9,6 +9,8 @@ import sys
 import time
 import zipfile
 
+from account_colors import apply_colors_to_profile
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SRC_DIR = os.path.join(BASE_DIR, "src")
 DIST_DIR = os.path.join(BASE_DIR, "dist")
@@ -106,6 +108,7 @@ def main():
     parser = argparse.ArgumentParser(description="Build and install Thunderbird Modern Cards View")
     parser.add_argument("--build-only", action="store_true", help="Only build the XPI packages in dist/ without modifying a profile")
     parser.add_argument("--profile", type=str, default=None, help="Explicit path to a Thunderbird profile directory")
+    parser.add_argument("--no-account-colors", action="store_true", help="Skip automatic domain-based account color-coding")
     args = parser.parse_args()
 
     print("=== Thunderbird Modern Cards View Installer ===")
@@ -130,6 +133,15 @@ def main():
     # Close Thunderbird if running
     close_thunderbird()
     time.sleep(1.5)
+
+    # Remove stale parent.lock if left over from forced close
+    lock_file = os.path.join(roaming_dir, "parent.lock")
+    if os.path.exists(lock_file):
+        try:
+            os.remove(lock_file)
+            print("Removed stale parent.lock")
+        except OSError:
+            pass
 
     # 1. Copy chrome/userChrome.css
     target_chrome_dir = os.path.join(roaming_dir, "chrome")
@@ -174,7 +186,17 @@ def main():
             json.dump(ext_data, f, separators=(",", ":"))
         print("Locked extension active state and disabled store auto-overwrite in extensions.json")
 
-    # 5. Remove stale AMO metadata cache and startupCache
+    # 5. Apply domain-grouped account color-coding (folderTree.json and userChrome.css)
+    if not args.no_account_colors:
+        print("\n--- Applying Domain-Grouped Account Color-Coding ---")
+        assigned_accounts = apply_colors_to_profile(roaming_dir)
+        if assigned_accounts:
+            print(f"{'Account':<10} {'Domain':<22} {'Email':<30} {'Color':<10}")
+            print("-" * 74)
+            for it in assigned_accounts:
+                print(f"{it['account']:<10} {it['domain']:<22} {it['email']:<30} {it.get('color', ''):<10}")
+
+    # 6. Remove stale AMO metadata cache and startupCache
     addons_json = os.path.join(roaming_dir, "addons.json")
     if os.path.exists(addons_json):
         os.remove(addons_json)
